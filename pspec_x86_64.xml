@@ -1,0 +1,73 @@
+<PISI>
+    <Source>
+        <Name>libsolv</Name>
+        <Packager>
+            <Name>Neal Gompa</Name>
+            <Email>ngompa13@gmail.com</Email>
+        </Packager>
+        <License>BSD-3-Clause</License>
+        <PartOf>programming.library</PartOf>
+        <Summary xml:lang="en">Package dependency solver</Summary>
+        <Description xml:lang="en">A free package dependency solver using satisfiability algorithm. The
+library is based on two major, but independent, blocks.
+
+* Using a dictionary approach to store and retrieve package and
+  dependency information.
+
+* Using satisfiability, a well known and researched topic, for
+  resolving package dependencies.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>libsolv</Name>
+        <Summary xml:lang="en">Package dependency solver</Summary>
+        <Description xml:lang="en">A free package dependency solver using satisfiability algorithm. The
+library is based on two major, but independent, blocks.
+
+* Using a dictionary approach to store and retrieve package and
+  dependency information.
+
+* Using satisfiability, a well known and researched topic, for
+  resolving package dependencies.
+</Description>
+        <PartOf>programming.library</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib64/lib*.so.*</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>libsolv-devel</Name>
+        <Summary xml:lang="en">Development files for libsolv</Summary>
+        <Description xml:lang="en">A free package dependency solver using satisfiability algorithm. The
+library is based on two major, but independent, blocks.
+
+* Using a dictionary approach to store and retrieve package and
+  dependency information.
+
+* Using satisfiability, a well known and researched topic, for
+  resolving package dependencies.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="1">libsolv</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/</Path>
+            <Path fileType="library">/usr/lib64/lib*.so</Path>
+            <Path fileType="data">/usr/lib64/pkgconfig/*.pc</Path>
+            <Path fileType="data">/usr/share/cmake/</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2017-10-16</Date>
+            <Version>0.6.29</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Neal Gompa</Name>
+            <Email>ngompa13@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

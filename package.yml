@@ -1,8 +1,8 @@
 name       : libsolv
-version    : 0.6.29
-release    : 1
+version    : 0.6.30
+release    : 2
 source     :
-    - https://github.com/openSUSE/libsolv/archive/0.6.29/libsolv-0.6.29.tar.gz : d46b3de18b677add61074e2522c4d5bfda886d705910aafbec4afd8119d94781
+    - https://github.com/openSUSE/libsolv/archive/0.6.30/libsolv-0.6.30.tar.gz : e2add44806ba8af84f190532e99696b6419e2abd4d27ac1cfe8877037e443ce5
 license    : BSD-3-Clause
 component  : programming.library
 summary    : Package dependency solver
@@ -26,6 +26,7 @@ setup      : |
     %cmake -DFEDORA=1 \
         -DENABLE_APPDATA=ON \
         -DENABLE_COMPS=ON \
+        -DENABLE_COMPLEX_DEPS=ON \
         -DENABLE_BZIP2_COMPRESSION=ON \
         -DENABLE_RPMDB=ON \
         -DENABLE_RPMDB_BYRPMHEADER=ON \

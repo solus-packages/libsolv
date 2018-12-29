@@ -2,8 +2,8 @@
     <Source>
         <Name>libsolv</Name>
         <Packager>
-            <Name>Neal Gompa</Name>
-            <Email>ngompa13@gmail.com</Email>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
         </Packager>
         <License>BSD-3-Clause</License>
         <PartOf>programming.library</PartOf>
@@ -33,9 +33,41 @@ library is based on two major, but independent, blocks.
 </Description>
         <PartOf>programming.library</PartOf>
         <Files>
-            <Path fileType="executable">/usr/bin</Path>
-            <Path fileType="library">/usr/lib64/lib*.so.*</Path>
-            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="executable">/usr/bin/appdata2solv</Path>
+            <Path fileType="executable">/usr/bin/comps2solv</Path>
+            <Path fileType="executable">/usr/bin/deltainfoxml2solv</Path>
+            <Path fileType="executable">/usr/bin/dumpsolv</Path>
+            <Path fileType="executable">/usr/bin/installcheck</Path>
+            <Path fileType="executable">/usr/bin/mergesolv</Path>
+            <Path fileType="executable">/usr/bin/repo2solv</Path>
+            <Path fileType="executable">/usr/bin/repomdxml2solv</Path>
+            <Path fileType="executable">/usr/bin/rpmdb2solv</Path>
+            <Path fileType="executable">/usr/bin/rpmmd2solv</Path>
+            <Path fileType="executable">/usr/bin/rpms2solv</Path>
+            <Path fileType="executable">/usr/bin/solv</Path>
+            <Path fileType="executable">/usr/bin/testsolv</Path>
+            <Path fileType="executable">/usr/bin/updateinfoxml2solv</Path>
+            <Path fileType="library">/usr/lib64/libsolv.so.1</Path>
+            <Path fileType="library">/usr/lib64/libsolvext.so.1</Path>
+            <Path fileType="man">/usr/share/man/man1/appdata2solv.1</Path>
+            <Path fileType="man">/usr/share/man/man1/comps2solv.1</Path>
+            <Path fileType="man">/usr/share/man/man1/deltainfoxml2solv.1</Path>
+            <Path fileType="man">/usr/share/man/man1/dumpsolv.1</Path>
+            <Path fileType="man">/usr/share/man/man1/installcheck.1</Path>
+            <Path fileType="man">/usr/share/man/man1/mergesolv.1</Path>
+            <Path fileType="man">/usr/share/man/man1/repo2solv.1</Path>
+            <Path fileType="man">/usr/share/man/man1/repomdxml2solv.1</Path>
+            <Path fileType="man">/usr/share/man/man1/rpmdb2solv.1</Path>
+            <Path fileType="man">/usr/share/man/man1/rpmmd2solv.1</Path>
+            <Path fileType="man">/usr/share/man/man1/rpms2solv.1</Path>
+            <Path fileType="man">/usr/share/man/man1/solv.1</Path>
+            <Path fileType="man">/usr/share/man/man1/testsolv.1</Path>
+            <Path fileType="man">/usr/share/man/man1/updateinfoxml2solv.1</Path>
+            <Path fileType="man">/usr/share/man/man3/libsolv-bindings.3</Path>
+            <Path fileType="man">/usr/share/man/man3/libsolv-constantids.3</Path>
+            <Path fileType="man">/usr/share/man/man3/libsolv-history.3</Path>
+            <Path fileType="man">/usr/share/man/man3/libsolv-pool.3</Path>
+            <Path fileType="man">/usr/share/man/man3/libsolv.3</Path>
         </Files>
     </Package>
     <Package>
@@ -52,22 +84,63 @@ library is based on two major, but independent, blocks.
 </Description>
         <PartOf>programming.devel</PartOf>
         <RuntimeDependencies>
-            <Dependency release="2">libsolv</Dependency>
+            <Dependency release="3">libsolv</Dependency>
         </RuntimeDependencies>
         <Files>
-            <Path fileType="header">/usr/include/</Path>
-            <Path fileType="library">/usr/lib64/lib*.so</Path>
-            <Path fileType="data">/usr/lib64/pkgconfig/*.pc</Path>
-            <Path fileType="data">/usr/share/cmake/</Path>
+            <Path fileType="header">/usr/include/solv/bitmap.h</Path>
+            <Path fileType="header">/usr/include/solv/chksum.h</Path>
+            <Path fileType="header">/usr/include/solv/dataiterator.h</Path>
+            <Path fileType="header">/usr/include/solv/dirpool.h</Path>
+            <Path fileType="header">/usr/include/solv/evr.h</Path>
+            <Path fileType="header">/usr/include/solv/hash.h</Path>
+            <Path fileType="header">/usr/include/solv/knownid.h</Path>
+            <Path fileType="header">/usr/include/solv/policy.h</Path>
+            <Path fileType="header">/usr/include/solv/pool.h</Path>
+            <Path fileType="header">/usr/include/solv/pool_fileconflicts.h</Path>
+            <Path fileType="header">/usr/include/solv/pool_parserpmrichdep.h</Path>
+            <Path fileType="header">/usr/include/solv/poolarch.h</Path>
+            <Path fileType="header">/usr/include/solv/poolid.h</Path>
+            <Path fileType="header">/usr/include/solv/pooltypes.h</Path>
+            <Path fileType="header">/usr/include/solv/poolvendor.h</Path>
+            <Path fileType="header">/usr/include/solv/problems.h</Path>
+            <Path fileType="header">/usr/include/solv/queue.h</Path>
+            <Path fileType="header">/usr/include/solv/repo.h</Path>
+            <Path fileType="header">/usr/include/solv/repo_appdata.h</Path>
+            <Path fileType="header">/usr/include/solv/repo_comps.h</Path>
+            <Path fileType="header">/usr/include/solv/repo_deltainfoxml.h</Path>
+            <Path fileType="header">/usr/include/solv/repo_repomdxml.h</Path>
+            <Path fileType="header">/usr/include/solv/repo_rpmdb.h</Path>
+            <Path fileType="header">/usr/include/solv/repo_rpmmd.h</Path>
+            <Path fileType="header">/usr/include/solv/repo_solv.h</Path>
+            <Path fileType="header">/usr/include/solv/repo_updateinfoxml.h</Path>
+            <Path fileType="header">/usr/include/solv/repo_write.h</Path>
+            <Path fileType="header">/usr/include/solv/repodata.h</Path>
+            <Path fileType="header">/usr/include/solv/rules.h</Path>
+            <Path fileType="header">/usr/include/solv/selection.h</Path>
+            <Path fileType="header">/usr/include/solv/solv_xfopen.h</Path>
+            <Path fileType="header">/usr/include/solv/solvable.h</Path>
+            <Path fileType="header">/usr/include/solv/solver.h</Path>
+            <Path fileType="header">/usr/include/solv/solverdebug.h</Path>
+            <Path fileType="header">/usr/include/solv/solvversion.h</Path>
+            <Path fileType="header">/usr/include/solv/strpool.h</Path>
+            <Path fileType="header">/usr/include/solv/testcase.h</Path>
+            <Path fileType="header">/usr/include/solv/tools_util.h</Path>
+            <Path fileType="header">/usr/include/solv/transaction.h</Path>
+            <Path fileType="header">/usr/include/solv/util.h</Path>
+            <Path fileType="library">/usr/lib64/libsolv.so</Path>
+            <Path fileType="library">/usr/lib64/libsolvext.so</Path>
+            <Path fileType="data">/usr/lib64/pkgconfig/libsolv.pc</Path>
+            <Path fileType="data">/usr/lib64/pkgconfig/libsolvext.pc</Path>
+            <Path fileType="data">/usr/share/cmake/Modules/FindLibSolv.cmake</Path>
         </Files>
     </Package>
     <History>
-        <Update release="2">
-            <Date>2017-12-25</Date>
-            <Version>0.6.30</Version>
+        <Update release="3">
+            <Date>2018-12-29</Date>
+            <Version>0.7.2</Version>
             <Comment>Packaging update</Comment>
-            <Name>Neal Gompa</Name>
-            <Email>ngompa13@gmail.com</Email>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
         </Update>
     </History>
 </PISI>
